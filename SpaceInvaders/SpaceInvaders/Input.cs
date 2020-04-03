@@ -3,7 +3,7 @@ using System.Threading;
 
 class Input
 {
-    public InputResult LastInput
+    public static InputResult LastInput
     {
         get;
         protected set;
@@ -21,6 +21,11 @@ class Input
     public void StopInput()
     {
         inputThread.Abort();
+    }
+
+    public void ClearInput()
+    {
+        LastInput = InputResult.None;
     }
 
 
@@ -48,6 +53,9 @@ class Input
 
             case ConsoleKey.Escape:
                 return InputResult.Exit;
+
+            case ConsoleKey.Spacebar:
+                return InputResult.Shoot;
         }
         return InputResult.None;
     }

@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bullet.cs" />
+    <Compile Include="DirectionMovableBase.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Game.cs" />
+    <Compile Include="GameBehaviourBase.cs" />
     <Compile Include="GameSettings.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Level.cs" />

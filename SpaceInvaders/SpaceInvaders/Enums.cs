@@ -14,5 +14,6 @@ enum InputResult
     MoveLeft,
     MoveRight,
     MoveUp,
-    MoveDown
+    MoveDown,
+    Shoot
 }

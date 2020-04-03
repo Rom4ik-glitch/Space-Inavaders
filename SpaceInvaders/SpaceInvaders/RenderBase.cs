@@ -1,6 +1,6 @@
 ﻿using System;
 
-abstract class RenderBase
+abstract class RenderBase 
 {
     protected ConsoleColor color;
 

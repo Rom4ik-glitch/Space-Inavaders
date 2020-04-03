@@ -1,67 +1,62 @@
 ﻿using System;
 
-class Player : MovableBase
+class Player : DirectionMovableBase
 {
-    public Direction Direction
-    {
-        get;
-        set;
-    }
-
-    protected readonly Level level;
-
     public Player(Level level, ConsoleColor color = ConsoleColor.Red)
+        : base(level)
     {
-        this.level = level;
         this.color = color;
+
+        Width = 7;
+        Height = 4;
     }
 
-    public void Move(Direction direction)
+    public override void OnUpdate()
     {
-        Direction = direction;
-        switch (direction)
+        var playerDirection = Direction.None;
+        switch (Input.LastInput)
         {
-            case Direction.Left:
-                if (x > 0 && !level[x - 1, y])
-                {
-                    MoveTo(x - 1, y);
-                }
+            case InputResult.MoveLeft:
+                playerDirection = Direction.Left;
                 break;
 
-            case Direction.Right:
-                if (x < level.Width - 1 && !level[x + 7, y])
-                {
-                    MoveTo(x + 1, y);
-                }
+            case InputResult.MoveRight:
+                playerDirection = Direction.Right;
                 break;
 
-            case Direction.Up:
-                if (y > 0 && !level[x, y - 1])
-                {
-                    MoveTo(x, y - 1);
-                }
+            case InputResult.MoveUp:
+                playerDirection = Direction.Up;
                 break;
 
-            case Direction.Down:
-                if (y < level.Height - 1 && !level[x, y + 4])
-                {
-                    MoveTo(x, y + 1);
-                }
+            case InputResult.MoveDown:
+                playerDirection = Direction.Down;
+                break;
+
+            case InputResult.Shoot:
+                var bullet = new Bullet(level);
+
+                bullet.MoveTo(X, Y);
+                bullet.Move(Direction.Right);
+
+                Game.Instance.RegisterBehaviour(bullet);
                 break;
         }
+        if (playerDirection != Direction.None)
+        {
+            Direction = playerDirection;
+        }
+        Move();
     }
-
-    public void Move() => Move(Direction);
 
     public override void Clear()
     {
-        Console.SetCursorPosition(x, y);
+        Console.SetCursorPosition(X, Y);
         Console.Write("    ");
-        Console.SetCursorPosition(x, y + 1);
+        Console.SetCursorPosition(X, Y + 1);
         Console.Write("       ");
-        Console.SetCursorPosition(x, y + 2);
+        Console.SetCursorPosition(X, Y + 2);
         Console.Write("       ");
-        Console.SetCursorPosition(x, y + 3);
+        Console.SetCursorPosition(X, Y + 3);
         Console.Write("    ");
     }
 
@@ -70,13 +65,13 @@ class Player : MovableBase
         var prevColor = Console.ForegroundColor;
         Console.ForegroundColor = color;
 
-        Console.SetCursorPosition(x, y);
+        Console.SetCursorPosition(X, Y);
         Console.Write("--->");
-        Console.SetCursorPosition(x, y + 1);
+        Console.SetCursorPosition(X, Y + 1);
         Console.Write("| \\---.");
-        Console.SetCursorPosition(x, y + 2);
+        Console.SetCursorPosition(X, Y + 2);
         Console.Write("| /---'");
-        Console.SetCursorPosition(x, y + 3);
+        Console.SetCursorPosition(X, Y + 3);
         Console.Write("--->");
 
         Console.ForegroundColor = prevColor;

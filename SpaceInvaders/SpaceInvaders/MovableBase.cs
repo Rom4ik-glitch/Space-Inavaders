@@ -1,17 +1,20 @@
-﻿abstract class MovableBase : RenderBase
+﻿abstract class MovableBase : GameBehaviourBase
 {
-    protected int x = 10;
-    protected int y = 10;
-    protected int prevX, prevY;
+    public int X
+    {
+        get;
+        protected set;
+    }
+
+    public int Y
+    {
+        get;
+        protected set;
+    }
 
     public virtual void MoveTo(int toX, int toY)
     {
-        Clear();
-        prevX = x;
-        prevY = y;
-
-        x = toX;
-        y = toY;
-        Draw();
+        X = toX;
+        Y = toY;
     }
 }

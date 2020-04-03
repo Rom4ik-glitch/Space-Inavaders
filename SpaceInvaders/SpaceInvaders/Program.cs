@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        new Game(new GameSettings
+        Game.Instance.Init(new GameSettings
         {
             levelWidth = 20,
             levelHeight = 10,
@@ -11,6 +11,7 @@
             playerSpawnY = 1,
 
             timeStep = 100
-        }).Start();
+        });
+        Game.Instance.Start();
     }
 }
