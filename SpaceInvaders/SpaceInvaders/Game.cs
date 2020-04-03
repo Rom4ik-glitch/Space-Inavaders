@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 
 class Game
 {
@@ -75,7 +74,11 @@ class Game
             }
 
             // Do every object logic
-            player.Move(playerDirection);
+            if (playerDirection != Direction.None)
+            {
+                player.Direction = playerDirection;
+            }
+            player.Move();
 
             // Clear frame
             player.Clear();

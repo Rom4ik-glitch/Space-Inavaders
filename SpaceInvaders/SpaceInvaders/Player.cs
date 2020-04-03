@@ -2,6 +2,12 @@
 
 class Player : MovableBase
 {
+    public Direction Direction
+    {
+        get;
+        set;
+    }
+
     protected readonly Level level;
 
     public Player(Level level, ConsoleColor color = ConsoleColor.Red)
@@ -12,6 +18,7 @@ class Player : MovableBase
 
     public void Move(Direction direction)
     {
+        Direction = direction;
         switch (direction)
         {
             case Direction.Left:
@@ -43,6 +50,8 @@ class Player : MovableBase
                 break;
         }
     }
+
+    public void Move() => Move(Direction);
 
     public override void Clear()
     {
