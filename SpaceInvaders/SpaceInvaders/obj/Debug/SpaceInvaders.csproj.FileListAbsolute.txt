@@ -5,3 +5,10 @@ E:\Unity\SI\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojAssemblyRe
 E:\Unity\SI\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
 E:\Unity\SI\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
 E:\Unity\SI\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe.config
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.exe
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\bin\Debug\SpaceInvaders.pdb
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csprojAssemblyReference.cache
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.csproj.CoreCompileInputs.cache
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.exe
+C:\Users\reaco\Desktop\Space-Inavaders-Alexander-Refactoring-\SpaceInvaders\SpaceInvaders\obj\Debug\SpaceInvaders.pdb

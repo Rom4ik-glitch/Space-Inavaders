@@ -1,5 +1,8 @@
-﻿abstract class DirectionMovableBase : MovableBase
+﻿using System.Security.Cryptography.X509Certificates;
+
+abstract class DirectionMovableBase : MovableBase
 {
+    public int Speed { get; set; }
     public Direction Direction
     {
         get;
