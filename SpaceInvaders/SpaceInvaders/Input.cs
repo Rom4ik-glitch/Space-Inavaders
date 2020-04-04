@@ -17,7 +17,7 @@ class Input
 
         inputThread.Start();
     }
-
+      
     public void StopInput()
     {
         inputThread.Abort();
@@ -55,6 +55,7 @@ class Input
                 return InputResult.Exit;
 
             case ConsoleKey.Spacebar:
+            case ConsoleKey.Enter:
                 return InputResult.Shoot;
         }
         return InputResult.None;

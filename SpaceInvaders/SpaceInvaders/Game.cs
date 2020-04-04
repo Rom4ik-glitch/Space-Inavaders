@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 
 class Game
@@ -32,6 +33,8 @@ class Game
 
     public void Init(GameSettings settings)
     {
+        
+        Console.CursorVisible = false;
         this.settings = settings;
 
         level = new Level(settings.levelWidth, settings.levelHeight);
@@ -40,6 +43,10 @@ class Game
         gameBehaviours = new List<GameBehaviourBase>();
         var player = new Player(level);
         player.MoveTo(settings.playerSpawnX, settings.playerSpawnY);
+        var enemy = new Enemy(level);
+        enemy.Move(Direction.Left);
+        enemy.MoveTo(20, 10);
+        Game.Instance.RegisterBehaviour(enemy);
         RegisterBehaviour(player);
     }
 

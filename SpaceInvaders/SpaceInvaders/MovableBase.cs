@@ -11,7 +11,8 @@
         get;
         protected set;
     }
-
+    //public int Enemy_X { get; set; }
+   // public int Enemy_Y { get; set; }
     public virtual void MoveTo(int toX, int toY)
     {
         X = toX;

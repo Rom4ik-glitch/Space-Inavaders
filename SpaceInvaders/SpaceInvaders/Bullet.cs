@@ -20,7 +20,6 @@ class Bullet : DirectionMovableBase
     {
         this.color = color;
         ID = LastID++;
-
         Width = 2;
         Height = 1;
     }
@@ -44,10 +43,8 @@ class Bullet : DirectionMovableBase
     public override void Draw()
     {
         var prevColor = Console.ForegroundColor;
-
         Console.SetCursorPosition(X, Y);
         Console.Write("->");
-
         Console.ForegroundColor = prevColor;
     }
 }
