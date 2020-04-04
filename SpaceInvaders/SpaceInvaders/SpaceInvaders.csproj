@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Bullet.cs" />
     <Compile Include="DirectionMovableBase.cs" />
+    <Compile Include="Enemy.cs" />
+    <Compile Include="EnemySpawner.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBehaviourBase.cs" />

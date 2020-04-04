@@ -27,13 +27,13 @@ class Game
 
     protected Level level;
     protected Input input;
+    protected EnemySpawner enemySpawner;
     protected List<GameBehaviourBase> gameBehaviours;
 
     protected Thread gameThread;
 
     public void Init(GameSettings settings)
-    {
-        
+    {        
         Console.CursorVisible = false;
         this.settings = settings;
 
@@ -43,11 +43,10 @@ class Game
         gameBehaviours = new List<GameBehaviourBase>();
         var player = new Player(level);
         player.MoveTo(settings.playerSpawnX, settings.playerSpawnY);
-        var enemy = new Enemy(level);
-        enemy.Move(Direction.Left);
-        enemy.MoveTo(20, 10);
-        Game.Instance.RegisterBehaviour(enemy);
         RegisterBehaviour(player);
+
+        enemySpawner = new EnemySpawner(level);
+        RegisterBehaviour(enemySpawner);
     }
 
     public void Start()
@@ -125,7 +124,7 @@ class Game
 
     void DrawDebug()
     {
-        System.Console.SetCursorPosition(0, level.Height);
-        System.Console.Write($"gameBehaviours: {gameBehaviours.Count}");
+        Console.SetCursorPosition(0, level.Height);
+        Console.Write($"gameBehaviours: {gameBehaviours.Count}");
     }
 }
